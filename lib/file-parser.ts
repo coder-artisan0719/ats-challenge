@@ -5,8 +5,7 @@ import * as pdfjsLib from 'pdfjs-dist';
 // Initialize PDF.js worker
 if (typeof window !== 'undefined') {
    try {
-      const workerSrc = new URL('pdfjs-dist/build/pdf.worker.mjs', import.meta.url);
-      pdfjsLib.GlobalWorkerOptions.workerSrc = workerSrc.href;
+      pdfjsLib.GlobalWorkerOptions.workerSrc = '/pdf.worker.mjs';
    } catch (error) {
       console.error('Failed to initialize PDF.js worker:', error);
       throw new Error('PDF parsing initialization failed');
@@ -54,6 +53,8 @@ export async function parseFile(file: File): Promise<CandidateCV> {
       } else {
          throw new Error(`Unsupported file type: ${fileType}`);
       }
+
+      console.log('test!!!!!!!!!!!!!!!', rawText)
 
       return {
          rawText,
