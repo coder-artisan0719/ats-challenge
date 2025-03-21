@@ -48,7 +48,6 @@ describe('CVUploadForm', () => {
 
       expect(screen.getByText(/upload candidate cv/i)).toBeInTheDocument();
       expect(screen.getByText(/drag and drop the cv file here, or click to browse/i, { exact: false })).toBeInTheDocument();
-      expect(screen.getByText(/skip for now/i)).toBeInTheDocument();
    });
 
    it('shows an alert when CV is already uploaded', () => {

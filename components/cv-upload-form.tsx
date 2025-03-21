@@ -122,9 +122,6 @@ export function CVUploadForm({ onComplete }: CVUploadFormProps) {
             )}
          </CardContent>
          <CardFooter className='flex justify-between'>
-            <Button variant='outline' onClick={() => onComplete()} disabled={isUploading}>
-               Skip for now
-            </Button>
             {candidateCV && !isUploading && (
                <Button onClick={() => onComplete()} disabled={isUploading}>
                   Continue
